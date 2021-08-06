@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Verbo</string>
     <string name="verbo_icon">Verbo_icon_large</string>
+    <string name="text_bottom_login">Login</string>
+    <string name="text_bottom_signup">Signup</string>
+
+    <string name="login_hint">Enter login</string>
+    <string name="signUp_hint">Enter login</string>
 </resources>
