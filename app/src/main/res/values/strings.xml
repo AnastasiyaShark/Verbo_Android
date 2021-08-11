@@ -4,6 +4,12 @@
     <string name="text_bottom_login">Login</string>
     <string name="text_bottom_signup">Signup</string>
 
+
+
+    <string name="text_hint_username">username</string>
+    <string name="text_hint_password">password</string>
+
+
     <string name="login_hint">Enter login</string>
     <string name="signUp_hint">Enter login</string>
 </resources>

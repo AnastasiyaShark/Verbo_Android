@@ -9,7 +9,8 @@
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22239583333333332" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_nattinatt.xml" value="0.15260416666666668" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_verbo_stor.xml" value="0.22239583333333332" />
-        <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/login_screen.xml" value="0.33" />
       </map>
     </option>
   </component>
