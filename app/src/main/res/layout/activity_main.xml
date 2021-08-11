@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/verbo_icon"
+        android:contentDescription="@string/verbo_icon_large"
         app:srcCompat="@drawable/ic_verbo_large" />
 
 

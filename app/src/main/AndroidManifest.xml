@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Verbo">
         <activity
+            android:name=".SignupScreenActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginScreenActivity"
             android:exported="true" />
         <activity android:name=".MainActivity">
