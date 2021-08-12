@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button login,signUp;
+    Button login, signUp;
 
 
     @Override
@@ -29,10 +29,16 @@ public class MainActivity extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                showRegisterWindow();
             }
+
+
         });
 
 
+    }
+
+    //метод для перехода на окно регистрации
+    private void showRegisterWindow() {
     }
 }

@@ -88,10 +88,10 @@
         </Space>
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/signup_username1"
+            android:id="@+id/signup_native_language"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:hint="@string/text_hint_username"
+            android:hint="@string/text_hint_native"
             android:inputType="text"
 
             android:textColor="@color/black"
@@ -105,10 +105,10 @@
         </Space>
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/signup_username2"
+            android:id="@+id/signup_learning_language"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:hint="@string/text_hint_username"
+            android:hint="@string/text_hint_learning"
             android:inputType="text"
 
             android:textColor="@color/black"
@@ -118,5 +118,7 @@
 
 
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

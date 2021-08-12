@@ -10,9 +10,8 @@
     <string name="text_hint_username">username</string>
     <string name="text_hint_password">password</string>
     <string name="text_hint_email">email</string>
-
-
-
+    <string name="text_hint_native">native language</string>
+    <string name="text_hint_learning">learning language</string>
 
     <string name="username_contentDescription">input field username</string>
 </resources>
