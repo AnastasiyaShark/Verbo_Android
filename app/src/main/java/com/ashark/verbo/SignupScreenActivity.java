@@ -7,12 +7,15 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class SignupScreenActivity extends AppCompatActivity {
-    MaterialEditText userName,password,email,nativeLanguage,learningLanguage;
+    MaterialEditText userName, password, email, nativeLanguage, learningLanguage;
+
+    Button buttonNativeLanguage, buttonLearningLanguage;
 
     @Override
 
@@ -22,11 +25,14 @@ public class SignupScreenActivity extends AppCompatActivity {
 
         userName = findViewById(R.id.signup_username);
         password = findViewById(R.id.signup_password);
-        email = findViewById (R.id.signup_email);
-        nativeLanguage = findViewById (R.id.signup_native_language);
-        learningLanguage = findViewById (R.id.signup_learning_language);
+        email = findViewById(R.id.signup_email);
+        nativeLanguage = findViewById(R.id.signup_native_language);
+        learningLanguage = findViewById(R.id.signup_learning_language);
 
-        nativeLanguage.setOnClickListener(new View.OnClickListener() {
+        buttonNativeLanguage = findViewById(R.id.button_native_language);
+        buttonLearningLanguage = findViewById(R.id.button_learning_language);
+
+        buttonNativeLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showInfoAboutLang();
@@ -34,8 +40,9 @@ public class SignupScreenActivity extends AppCompatActivity {
             }
         });
     }
-    String[] languages ={"Swedish","English","Russian"};
-    boolean [] checkedSites = new boolean[]{false,false,false};
+
+    String[] languages = {"Swedish", "English", "Russian"};
+    boolean[] checkedSites = new boolean[]{false, false, false};
 
     public void showInfoAboutLang() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
@@ -43,7 +50,7 @@ public class SignupScreenActivity extends AppCompatActivity {
         dialog.setMessage("Choose your native language");
 
         //Building the list to be shown in AlertDialog
-       dialog.setMultiChoiceItems(languages,checkedSites, new DialogInterface.OnMultiChoiceClickListener() {
+        dialog.setMultiChoiceItems(languages, checkedSites, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                 // Update the current item's checked status
@@ -54,7 +61,7 @@ public class SignupScreenActivity extends AppCompatActivity {
         dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(),"OK button was pressed",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "OK button was pressed", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -62,7 +69,7 @@ public class SignupScreenActivity extends AppCompatActivity {
         dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getApplicationContext(),"Cancel button was pressed",Toast.LENGTH_LONG).show();
+                dialog.dismiss();
             }
         });
 
@@ -71,10 +78,7 @@ public class SignupScreenActivity extends AppCompatActivity {
         //Displaying AlertDialog
         alterDialog.show();
 
-
-
     }
-
 
 
 }

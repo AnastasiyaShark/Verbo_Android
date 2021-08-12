@@ -2,6 +2,7 @@ package com.ashark.verbo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,16 +30,13 @@ public class MainActivity extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showRegisterWindow();
+                Intent intent = new Intent(MainActivity.this, SignupScreenActivity.class);
+                startActivity(intent);
             }
 
 
         });
 
 
-    }
-
-    //метод для перехода на окно регистрации
-    private void showRegisterWindow() {
     }
 }
