@@ -9,18 +9,19 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="137dp"
-        android:layout_height="129dp"
+        android:layout_width="153dp"
+        android:layout_height="138dp"
         android:layout_marginStart="135dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="135dp"
         android:layout_marginBottom="516dp"
         android:contentDescription="@string/verbo_icon_small"
+        android:foregroundGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.744"
         app:srcCompat="@drawable/ic_verbo_large" />
 
     <LinearLayout
@@ -28,7 +29,7 @@
         android:layout_width="275dp"
         android:layout_height="186dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="60dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,11 +44,11 @@
             android:hint="@string/text_hint_username"
             android:inputType="text"
 
-            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:met_floatingLabel="normal"
-            app:met_floatingLabelTextColor="@color/black" />
+            app:met_floatingLabelTextColor="@color/black"
+            tools:ignore="TextContrastCheck" />
 
 
         <Space
@@ -63,7 +64,10 @@
 
             android:inputType="text"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:met_floatingLabel="normal"
+            app:met_floatingLabelTextColor="@color/black"
+            tools:ignore="TextContrastCheck" />
 
         <Space
             android:layout_width="0dp"
@@ -77,7 +81,10 @@
             android:hint="@string/text_hint_email"
             android:inputType="text"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:met_floatingLabel="normal"
+            app:met_floatingLabelTextColor="@color/black"
+            tools:ignore="TextContrastCheck" />
 
 
     </LinearLayout>
@@ -91,14 +98,18 @@
         android:layout_marginTop="10dp"
 
         android:layout_marginEnd="60dp"
-        android:gravity="center"
+        android:gravity="start"
         android:hint="@string/text_hint_native"
         android:orientation="vertical"
         android:textColorHint="#CFD8DC"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:met_floatingLabel="normal"
+        app:met_floatingLabelTextColor="@color/black"
+        tools:ignore="TextContrastCheck" />
 
     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
         android:id="@+id/material_spinner_learning_language"
@@ -107,19 +118,23 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="60dp"
-        android:gravity="center"
+        android:gravity="start"
+
         android:hint="@string/text_hint_learning"
         android:textColorHint="#CFD8DC"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/material_spinner_native_language"
-        app:met_floatingLabel="normal" />
+        app:met_floatingLabel="normal"
+        app:met_floatingLabelTextColor="@color/black"
+        tools:ignore="TextContrastCheck" />
 
     <LinearLayout
         android:layout_width="275dp"
-        android:layout_height="54dp"
+        android:layout_height="60dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="60dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,10 +146,10 @@
         <Button
             android:id="@+id/button_back"
             android:layout_width="130dp"
-            android:layout_height="54dp"
+            android:layout_height="60dp"
             android:text="@string/text_bottom_back"
             android:textColor="@color/black"
-            android:textSize="10sp"
+            android:textSize="16sp"
             app:backgroundTint="@color/white"
             app:strokeColor="@color/black"
             app:strokeWidth="1dp"
@@ -149,10 +164,10 @@
         <Button
             android:id="@+id/button_reg"
             android:layout_width="130dp"
-            android:layout_height="54dp"
+            android:layout_height="60dp"
             android:text="@string/text_bottom_signup"
             android:textColor="@color/black"
-            android:textSize="10sp"
+            android:textSize="16sp"
             app:backgroundTint="@color/white"
 
             app:strokeColor="@color/black"

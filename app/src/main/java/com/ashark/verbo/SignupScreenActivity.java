@@ -16,7 +16,7 @@ import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 public class SignupScreenActivity extends AppCompatActivity {
     MaterialEditText userName, password, email;
-    MaterialBetterSpinner materialBetterSpinnerNativeLanguage,materialBetterSpinnerLearningLanguage;
+    MaterialBetterSpinner materialBetterSpinnerNativeLanguage, materialBetterSpinnerLearningLanguage;
 
     String[] languages = {"Swedish", "English", "Russian"};
 
@@ -42,8 +42,6 @@ public class SignupScreenActivity extends AppCompatActivity {
 //            }
 //        });
     }
-
-
 
 
 //    public void showInfoAboutLang() {
