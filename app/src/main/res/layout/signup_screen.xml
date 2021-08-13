@@ -82,101 +82,51 @@
 
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="275dp"
-        android:layout_height="54dp"
+        android:layout_height="115dp"
         android:layout_marginStart="60dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="60dp"
-        android:orientation="horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/signup_native_language"
-            android:layout_width="130dp"
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:id="@+id/material_spinner_native_language"
+            android:layout_width="259dp"
             android:layout_height="54dp"
+            android:gravity="center"
+
             android:hint="@string/text_hint_native"
+            android:textColorHint="#CFD8DC"
+            app:met_floatingLabel="highlight" />
 
-            android:inputType="text"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:met_floatingLabel="normal" />
+        <!--        <Space-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_weight="1" />-->
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/signup_learning_language"
-            android:layout_width="130dp"
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:id="@+id/material_spinner_learning_language"
+            android:layout_width="260dp"
             android:layout_height="54dp"
+            android:gravity="center"
             android:hint="@string/text_hint_learning"
-
-
-            android:inputType="text"
-            android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textColorHint="#CFD8DC"
             app:met_floatingLabel="normal" />
 
 
     </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="275dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.0">
-
-
-        <Button
-            android:id="@+id/button_native_language"
-            android:layout_width="130dp"
-            android:layout_height="54dp"
-            android:text="@string/text_bottom_click"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            app:backgroundTint="@color/white"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp"
-            tools:layout_editor_absoluteX="88dp"
-            tools:layout_editor_absoluteY="489dp" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/button_learning_language"
-            android:layout_width="130dp"
-            android:layout_height="54dp"
-            android:text="@string/text_bottom_click"
-            android:textColor="@color/black"
-            android:textSize="10sp"
-            app:backgroundTint="@color/white"
-
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp"
-            tools:layout_editor_absoluteX="252dp"
-            tools:layout_editor_absoluteY="480dp" />
-
-
-    </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="275dp"
@@ -188,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
 
         <Button
