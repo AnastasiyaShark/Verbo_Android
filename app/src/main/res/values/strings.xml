@@ -5,8 +5,8 @@
 
     <string name="text_bottom_login">Login</string>
     <string name="text_bottom_signup">Signup</string>
-    <string name="text_bottom_click_native">Choose native language</string>
-    <string name="text_bottom_click_learning">Choose learning language</string>
+    <string name="text_bottom_click">Click here</string>
+    <string name="text_bottom_back">Back</string>
 
 
     <string name="text_hint_username">username</string>
