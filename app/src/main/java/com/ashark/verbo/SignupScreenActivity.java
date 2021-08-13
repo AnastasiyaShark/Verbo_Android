@@ -1,15 +1,9 @@
 package com.ashark.verbo;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
@@ -18,7 +12,8 @@ public class SignupScreenActivity extends AppCompatActivity {
     MaterialEditText userName, password, email;
     MaterialBetterSpinner materialBetterSpinnerNativeLanguage, materialBetterSpinnerLearningLanguage;
 
-    String[] languages = {"Swedish", "English", "Russian"};
+    String[] nativeLanguages = {"Swedish", "English", "Russian"};
+    String[] learningLanguages = {"Swedish", "English"};
 
 
     @Override
@@ -29,11 +24,18 @@ public class SignupScreenActivity extends AppCompatActivity {
         userName = findViewById(R.id.signup_username);
         password = findViewById(R.id.signup_password);
         email = findViewById(R.id.signup_email);
-
         materialBetterSpinnerNativeLanguage = (MaterialBetterSpinner) findViewById(R.id.material_spinner_native_language);
         materialBetterSpinnerLearningLanguage = (MaterialBetterSpinner) findViewById(R.id.material_spinner_learning_language);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(SignupScreenActivity.this, android.R.layout.simple_dropdown_item_1line, languages);
-        materialBetterSpinnerNativeLanguage.setAdapter(adapter);
+
+
+
+        //установка native language
+        ArrayAdapter<String> adapterNativeLanguage = new ArrayAdapter<>(SignupScreenActivity.this, android.R.layout.simple_dropdown_item_1line, nativeLanguages);
+        materialBetterSpinnerNativeLanguage.setAdapter(adapterNativeLanguage);
+        //установка learning language
+        ArrayAdapter<String> adapterLearningLanguage = new ArrayAdapter<>(SignupScreenActivity.this, android.R.layout.simple_dropdown_item_1line, learningLanguages);
+        materialBetterSpinnerLearningLanguage.setAdapter(adapterLearningLanguage);
+
 
 //        buttonNativeLanguage.setOnClickListener(new View.OnClickListener() {
 //            @Override
