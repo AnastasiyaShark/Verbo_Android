@@ -48,6 +48,7 @@
             android:textSize="16sp"
             app:met_floatingLabel="normal"
             app:met_floatingLabelTextColor="@color/black"
+            app:met_underlineColor="@color/black"
             tools:ignore="TextContrastCheck" />
 
 
@@ -67,6 +68,7 @@
             android:textSize="16sp"
             app:met_floatingLabel="normal"
             app:met_floatingLabelTextColor="@color/black"
+            app:met_underlineColor="@color/black"
             tools:ignore="TextContrastCheck" />
 
         <Space
@@ -84,6 +86,7 @@
             android:textSize="16sp"
             app:met_floatingLabel="normal"
             app:met_floatingLabelTextColor="@color/black"
+            app:met_underlineColor="@color/black"
             tools:ignore="TextContrastCheck" />
 
 
@@ -109,6 +112,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:met_floatingLabel="normal"
         app:met_floatingLabelTextColor="@color/black"
+        app:met_underlineColor="@color/black"
         tools:ignore="TextContrastCheck" />
 
     <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
@@ -119,6 +123,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="60dp"
         android:gravity="start"
+        app:met_underlineColor="@color/black"
 
         android:hint="@string/text_hint_learning"
         android:textColorHint="#CFD8DC"
