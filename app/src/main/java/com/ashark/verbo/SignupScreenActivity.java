@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 
@@ -41,24 +40,14 @@ public class SignupScreenActivity extends AppCompatActivity {
         materialBetterSpinnerLearningLanguage.setAdapter(adapterLearningLanguage);
 
         //переход на начальную страницу
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignupScreenActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-
-
+        back.setOnClickListener(v -> {
+            Intent intent = new Intent(SignupScreenActivity.this, MainActivity.class);
+            startActivity(intent);
         });
 
-
-//        buttonNativeLanguage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v)
-//
-//            }
-//        });
     }
+
+}
 
 
 //    public void showInfoAboutLang() {
@@ -97,6 +86,3 @@ public class SignupScreenActivity extends AppCompatActivity {
 //        alterDialog.show();
 
 //    }
-
-
-}

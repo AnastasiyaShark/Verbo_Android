@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,23 +19,15 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.login);
         signUp = findViewById(R.id.signUp);
         //внутри что будет происходить при нажатии на кнопку
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LoginScreenActivity.class);
-                startActivity(intent);
+        login.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, LoginScreenActivity.class);
+            startActivity(intent);
 
-            }
         });
         //переход на другую страницу
-        signUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SignupScreenActivity.class);
-                startActivity(intent);
-            }
-
-
+        signUp.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SignupScreenActivity.class);
+            startActivity(intent);
         });
 
 
