@@ -15,10 +15,11 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 public class SignupScreenActivity extends AppCompatActivity {
-    MaterialEditText userName, password, email, nativeLanguage, learningLanguage;
-    Button buttonNativeLanguage, buttonLearningLanguage;
+    MaterialEditText userName, password, email;
+    MaterialBetterSpinner materialBetterSpinnerNativeLanguage,materialBetterSpinnerLearningLanguage;
+
     String[] languages = {"Swedish", "English", "Russian"};
-    MaterialBetterSpinner materialBetterSpinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,23 +29,18 @@ public class SignupScreenActivity extends AppCompatActivity {
         userName = findViewById(R.id.signup_username);
         password = findViewById(R.id.signup_password);
         email = findViewById(R.id.signup_email);
-//        nativeLanguage = findViewById(R.id.signup_native_language);
-//        learningLanguage = findViewById(R.id.signup_learning_language);
-//
-//        buttonNativeLanguage = findViewById(R.id.button_native_language);
-//        buttonLearningLanguage = findViewById(R.id.button_learning_language);
 
-        materialBetterSpinner = (MaterialBetterSpinner) findViewById(R.id.material_spinner_native_language);
+        materialBetterSpinnerNativeLanguage = (MaterialBetterSpinner) findViewById(R.id.material_spinner_native_language);
+        materialBetterSpinnerLearningLanguage = (MaterialBetterSpinner) findViewById(R.id.material_spinner_learning_language);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(SignupScreenActivity.this, android.R.layout.simple_dropdown_item_1line, languages);
-        materialBetterSpinner.setAdapter(adapter);
+        materialBetterSpinnerNativeLanguage.setAdapter(adapter);
 
-        buttonNativeLanguage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                showInfoAboutLang();
-
-            }
-        });
+//        buttonNativeLanguage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v)
+//
+//            }
+//        });
     }
 
 
