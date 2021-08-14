@@ -2,6 +2,8 @@
     <string name="app_name">Verbo</string>
     <string name="verbo_icon_large">Verbo_icon_large</string>
     <string name="verbo_icon_small">Verbo_icon_small</string>
+    <string name="text_hi">Hi,Username! </string>
+
 
     <string name="text_bottom_login">Login</string>
     <string name="text_bottom_signup">Signup</string>
@@ -12,6 +14,10 @@
     <string name="text_bottom_exam">Exam</string>
     <string name="text_bottom_grammar">Grammar</string>
     <string name="text_bottom_profile">Profile</string>
+    <string name="text_bottom_account">Account</string>
+    <string name="text_bottom_vocabulary">Vocabulary</string>
+    <string name="text_bottom_logout">Logout</string>
+
 
 
     <string name="text_hint_username">username</string>
