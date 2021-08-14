@@ -29,5 +29,10 @@ public class LoginScreenActivity extends AppCompatActivity {
             Intent intent = new Intent(LoginScreenActivity.this, MainActivity.class);
             startActivity(intent);
         });
+        login.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginScreenActivity.this, MainScreenActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

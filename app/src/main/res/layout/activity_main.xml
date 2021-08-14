@@ -12,25 +12,21 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
         android:layout_marginTop="130dp"
-        android:layout_marginEnd="80dp"
         android:layout_marginBottom="310dp"
+        android:contentDescription="@string/verbo_icon_large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/verbo_icon_large"
         app:srcCompat="@drawable/ic_verbo_large" />
 
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/grammar"
         android:layout_width="229dp"
         android:layout_height="60dp"
-        android:layout_marginStart="66dp"
         android:layout_marginTop="381dp"
-        android:layout_marginEnd="66dp"
         android:layout_marginBottom="205dp"
         android:text="@string/text_bottom_login"
         android:textAllCaps="false"
@@ -46,12 +42,10 @@
         app:strokeWidth="2dp" />
 
     <Button
-        android:id="@+id/signUp"
+        android:id="@+id/learn_verbs"
         android:layout_width="229dp"
         android:layout_height="60dp"
-        android:layout_marginStart="66dp"
         android:layout_marginTop="457dp"
-        android:layout_marginEnd="66dp"
         android:layout_marginBottom="129dp"
         android:text="@string/text_bottom_signup"
         android:textAllCaps="false"

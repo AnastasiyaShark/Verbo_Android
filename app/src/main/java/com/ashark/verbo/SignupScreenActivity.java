@@ -27,8 +27,8 @@ public class SignupScreenActivity extends AppCompatActivity {
         userName = findViewById(R.id.signup_username);
         password = findViewById(R.id.signup_password);
         email = findViewById(R.id.signup_email);
-        materialBetterSpinnerNativeLanguage = (MaterialBetterSpinner) findViewById(R.id.material_spinner_native_language);
-        materialBetterSpinnerLearningLanguage = (MaterialBetterSpinner) findViewById(R.id.material_spinner_learning_language);
+        materialBetterSpinnerNativeLanguage =  findViewById(R.id.material_spinner_native_language);
+        materialBetterSpinnerLearningLanguage =  findViewById(R.id.material_spinner_learning_language);
         back = findViewById(R.id.button_back);
         signUp = findViewById(R.id.button_reg);
 
@@ -42,6 +42,11 @@ public class SignupScreenActivity extends AppCompatActivity {
         //переход на начальную страницу
         back.setOnClickListener(v -> {
             Intent intent = new Intent(SignupScreenActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        signUp.setOnClickListener(v -> {
+            Intent intent = new Intent(SignupScreenActivity.this, MainScreenActivity.class);
             startActivity(intent);
         });
 

@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        login = findViewById(R.id.login);
-        signUp = findViewById(R.id.signUp);
+        login = findViewById(R.id.grammar);
+        signUp = findViewById(R.id.learn_verbs);
         //внутри что будет происходить при нажатии на кнопку
         login.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, LoginScreenActivity.class);

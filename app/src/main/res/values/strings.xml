@@ -7,6 +7,12 @@
     <string name="text_bottom_signup">Signup</string>
     <string name="text_bottom_click">Click here</string>
     <string name="text_bottom_back">Back</string>
+    <string name="text_bottom_learn_verbs">Learn verbs</string>
+    <string name="text_bottom_repeat_verbs">Repeat verbs</string>
+    <string name="text_bottom_exam">Exam</string>
+    <string name="text_bottom_grammar">Grammar</string>
+    <string name="text_bottom_profile">Profile</string>
+
 
 
     <string name="text_hint_username">username</string>
@@ -14,8 +20,6 @@
     <string name="text_hint_email">email</string>
     <string name="text_hint_native">native language</string>
     <string name="text_hint_learning">learning language</string>
-
-
 
 
     <string name="username_contentDescription">input field username</string>
