@@ -4,16 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22239583333333332" />
+        <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_arrow_back.xml" value="0.23541666666666666" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_hgf.xml" value="0.22239583333333332" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_icon.xml" value="0.15625" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22239583333333332" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_nattinatt.xml" value="0.15260416666666668" />
+        <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_user.xml" value="0.23541666666666666" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_verbo_large.xml" value="0.4036458333333333" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/drawable/ic_verbo_stor.xml" value="0.22239583333333332" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/activity_main_screen.xml" value="0.33" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/login_screen.xml" value="0.33" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/signup_screen.xml" value="0.25" />
+        <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/user_screen.xml" value="0.21927083333333333" />
       </map>
     </option>
   </component>
