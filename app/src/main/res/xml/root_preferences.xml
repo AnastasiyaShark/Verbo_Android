@@ -1,0 +1,56 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundColor">
+
+    <PreferenceCategory
+        android:background="@color/backgroundColor"
+        app:title="@string/messages_header">
+
+
+        <EditTextPreference
+            app:key="username"
+            app:title="@string/username_title"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            app:key="password"
+            app:title="@string/password_title"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            app:key="email"
+            app:title="@string/email_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="english"
+            app:entries="@array/native_languages_entries"
+            app:entryValues="@array/native_languages_values"
+            app:key="native_language"
+            app:title="@string/native_language_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="swedish"
+            app:entries="@array/learning_languages_entries"
+            app:entryValues="@array/learning_languages_values"
+            app:key="learning_language"
+            app:title="@string/learning_language_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <!--    <PreferenceCategory app:title="@string/sync_header">-->
+
+    <!--        <SwitchPreferenceCompat-->
+    <!--            app:key="sync"-->
+    <!--            app:title="@string/sync_title" />-->
+
+    <!--        <SwitchPreferenceCompat-->
+    <!--            app:dependency="sync"-->
+    <!--            app:key="attachment"-->
+    <!--            app:summaryOff="@string/attachment_summary_off"-->
+    <!--            app:summaryOn="@string/attachment_summary_on"-->
+    <!--            app:title="@string/attachment_title" />-->
+
+    <!--    </PreferenceCategory>-->
+
+</PreferenceScreen>

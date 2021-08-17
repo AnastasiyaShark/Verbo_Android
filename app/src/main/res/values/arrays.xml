@@ -1,0 +1,26 @@
+<resources>
+    <!-- Reply Preference -->
+<!--    The human-readable array to present as a list.-->
+    <string-array name="native_languages_entries">
+        <item>Swedish</item>
+        <item>English</item>
+        <item>Russian</item>
+    </string-array>
+<!--    The array to find the value to save for a preference when an entry from entries is selected.-->
+    <string-array name="native_languages_values">
+        <item>swedish</item>
+        <item>english</item>
+        <item>russian</item>
+    </string-array>
+
+
+    <string-array name="learning_languages_entries">
+        <item>Swedish</item>
+        <item>English</item>
+    </string-array>
+    <!--    The array to find the value to save for a preference when an entry from entries is selected.-->
+    <string-array name="learning_languages_values">
+        <item>swedish</item>
+        <item>english</item>
+    </string-array>
+</resources>

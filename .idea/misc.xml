@@ -15,9 +15,11 @@
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/activity_main_screen.xml" value="0.33" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/login_screen.xml" value="0.33" />
+        <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/settings_activity.xml" value="0.41601866251944014" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/signup_screen.xml" value="0.25" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/user_screen.xml" value="0.25" />
         <entry key="..\:/Java/Verbo/Android/app/src/main/res/layout/user_settings_scrreen.xml" value="0.203125" />
+        <entry key="..\:/Java/Verbo/Android/app/src/main/res/xml/root_preferences.xml" value="0.3383152173913043" />
       </map>
     </option>
   </component>

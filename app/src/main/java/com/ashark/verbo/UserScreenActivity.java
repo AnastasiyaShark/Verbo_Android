@@ -1,5 +1,7 @@
 package com.ashark.verbo;
 
+import static androidx.navigation.ui.NavigationUI.setupActionBarWithNavController;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +21,8 @@ public class UserScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_screen);
 
+
+
         back = findViewById(R.id.back);
         account = findViewById(R.id.account);
         vocabulary = findViewById(R.id.vocabulary);
@@ -31,6 +35,11 @@ public class UserScreenActivity extends AppCompatActivity {
 
         logout.setOnClickListener(v -> {
             openQuitDialog();
+        });
+
+        account.setOnClickListener(v -> {
+            Intent intent = new Intent(UserScreenActivity.this,SettingsActivity.class);
+            startActivity(intent);
         });
 
     }
