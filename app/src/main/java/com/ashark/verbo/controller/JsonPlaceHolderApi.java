@@ -1,6 +1,7 @@
 package com.ashark.verbo.controller;
 
 import com.ashark.verbo.model.SigningRequest;
+import com.ashark.verbo.model.SignupRequest;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -12,4 +13,8 @@ import retrofit2.http.POST;
 public interface JsonPlaceHolderApi {
     @POST ("/login")
     Call<String> authenticateUser (@Body SigningRequest request);
+
+    @POST("/signup")
+    Call<Response<String>> createUser (@Body SignupRequest signupRequest);
+
 }

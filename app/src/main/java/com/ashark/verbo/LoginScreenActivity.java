@@ -13,10 +13,7 @@ import com.ashark.verbo.controller.JsonPlaceHolderApi;
 import com.ashark.verbo.model.SigningRequest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.stream.JsonReader;
 import com.rengwuxian.materialedittext.MaterialEditText;
-
-import java.io.StringReader;
 
 import retrofit2.Call;
 import retrofit2.Callback;
