@@ -10,7 +10,12 @@ import android.widget.Toast;
 
 import com.ashark.verbo.controller.JsonPlaceHolderApi;
 import com.ashark.verbo.model.SigningRequest;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import java.io.StringReader;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,9 +39,13 @@ public class LoginScreenActivity extends AppCompatActivity {
         login = findViewById(R.id.button_login);
 
 
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://10.0.2.2:8080")
-                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("https://10.0.2.2:8080/")
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
@@ -47,7 +56,7 @@ public class LoginScreenActivity extends AppCompatActivity {
             startActivity(intent);
         });
         login.setOnClickListener(v -> {
-            authenticateUser(userName.getHelperText(),password.getHelperText());
+            authenticateUser(userName.getText().toString(), password.getText().toString());
 
 //            Intent intent = new Intent(LoginScreenActivity.this, MainScreenActivity.class);
 //            startActivity(intent);
@@ -55,27 +64,27 @@ public class LoginScreenActivity extends AppCompatActivity {
 
     }
 
-    private void authenticateUser (String login, String password){
+    private void authenticateUser(String login, String password) {
 
-        SigningRequest request = new SigningRequest(login,password);
+        SigningRequest request = new SigningRequest(login, password);
 
-        Call<Response<String>> call = jsonPlaceHolderApi.authenticateUser(request);
-//        System.out.println(call.request());
+        Call<String> call = jsonPlaceHolderApi.authenticateUser(request);
 
-        call.enqueue(new Callback<Response<String>>() {
-
+        call.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<Response<String>> call, Response<Response<String>> response) {
-                    if (!response.isSuccessful()){
-                        System.out.println(response.body());
-                    }
+            public void onResponse(Call<String> call, Response<String> response) {
+                if (!response.isSuccessful()) {
 
+                }
+                System.out.println("Sucsess!!!!");
             }
 
             @Override
-            public void onFailure(Call<Response<String>> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t) {
                 System.out.println(t);
             }
         });
+
+
     }
 }
