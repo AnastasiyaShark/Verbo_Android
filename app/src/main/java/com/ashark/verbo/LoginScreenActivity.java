@@ -2,6 +2,7 @@ package com.ashark.verbo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -55,11 +56,10 @@ public class LoginScreenActivity extends AppCompatActivity {
             Intent intent = new Intent(LoginScreenActivity.this, MainActivity.class);
             startActivity(intent);
         });
+
         login.setOnClickListener(v -> {
             authenticateUser(userName.getText().toString(), password.getText().toString());
 
-//            Intent intent = new Intent(LoginScreenActivity.this, MainScreenActivity.class);
-//            startActivity(intent);
         });
 
     }
@@ -74,13 +74,27 @@ public class LoginScreenActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 if (!response.isSuccessful()) {
+                    Context context = getApplicationContext();
+                    CharSequence text = "Incorrect login or password!";
+                    int duration = Toast.LENGTH_LONG;
 
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }else {
+                    Intent intent = new Intent(LoginScreenActivity.this, MainScreenActivity.class);
+                    startActivity(intent);
                 }
-                System.out.println("Sucsess!!!!");
+
             }
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
+                Context context = getApplicationContext();
+                CharSequence text = "Incorrect login or password!";
+                int duration = Toast.LENGTH_LONG;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
                 System.out.println(t);
             }
         });
