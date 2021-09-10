@@ -2,13 +2,14 @@ package com.ashark.verbo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.ashark.verbo.controller.JsonPlaceHolderApi;
-import com.ashark.verbo.controller.JsonPlaceHolderApiSignup;
 import com.ashark.verbo.model.SignupRequest;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,8 +27,8 @@ public class SignupScreenActivity extends AppCompatActivity {
     MaterialBetterSpinner materialBetterSpinnerNativeLanguage, materialBetterSpinnerLearningLanguage;
     Button back, signUp;
 
-    String[] nativeLanguages = {"Swedish", "English", "Russian"};
-    String[] learningLanguages = {"Swedish", "English"};
+    String[] nativeLanguages = {"English", "Swedish", "Russian"};
+    String[] learningLanguages = {"English", "Swedish"};
 
     JsonPlaceHolderApi jsonPlaceHolderApi;
 
@@ -40,8 +41,8 @@ public class SignupScreenActivity extends AppCompatActivity {
         userName = findViewById(R.id.signup_username);
         password = findViewById(R.id.signup_password);
         email = findViewById(R.id.signup_email);
-        materialBetterSpinnerNativeLanguage =  findViewById(R.id.material_spinner_native_language);
-        materialBetterSpinnerLearningLanguage =  findViewById(R.id.material_spinner_learning_language);
+        materialBetterSpinnerNativeLanguage = findViewById(R.id.material_spinner_native_language);
+        materialBetterSpinnerLearningLanguage = findViewById(R.id.material_spinner_learning_language);
 
         back = findViewById(R.id.button_back);
         signUp = findViewById(R.id.button_reg);
@@ -54,12 +55,11 @@ public class SignupScreenActivity extends AppCompatActivity {
         materialBetterSpinnerLearningLanguage.setAdapter(adapterLearningLanguage);
 
 
-
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://10.0.2.2:8080")
+                .baseUrl("https://10.0.2.2:8080/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
@@ -72,8 +72,9 @@ public class SignupScreenActivity extends AppCompatActivity {
         });
 
         signUp.setOnClickListener(v -> {
-            Intent intent = new Intent(SignupScreenActivity.this, MainScreenActivity.class);
-            startActivity(intent);
+            createUser(userName.getText().toString(), password.getText().toString(), email.getText().toString(),
+                    materialBetterSpinnerNativeLanguage.getText().toString(),
+                    materialBetterSpinnerLearningLanguage.getText().toString());
         });
 
     }
@@ -81,21 +82,45 @@ public class SignupScreenActivity extends AppCompatActivity {
     private void createUser(String name, String password, String email,
                             String nativeLanguage, String learningLanguage1) {
 
-        SignupRequest request = new SignupRequest(name,password,email,nativeLanguage,learningLanguage1);
+        SignupRequest request = new SignupRequest(name, password, email, null, null);
+        if (nativeLanguage.equals(nativeLanguages[1])) {
+            request.setNativeLanguageId(2);
+        } else if (nativeLanguage.equals(nativeLanguages[2])) {
+            request.setNativeLanguageId(3);
+        } else {
+            request.setNativeLanguageId(1);
+        }
+        if (learningLanguage1.equals(learningLanguages[1])) {
+            request.setLearningLanguage1Id(2);
+        } else {
+            request.setLearningLanguage1Id(1);
+        }
+        System.out.println(request);
+        Call<String> call = jsonPlaceHolderApi.createUser(request);
 
-        Call<Response<String>> call = jsonPlaceHolderApi.createUser(request);
-
-        call.enqueue(new Callback<Response<String>>() {
+        call.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<Response<String>> call, Response<Response<String>> response) {
+            public void onResponse
+                    (Call<String> call, Response<String> response) {
+                if (!response.isSuccessful()) {
+                    Context context = getApplicationContext();
+                    CharSequence text = "Incorrect login or password!";
+                    int duration = Toast.LENGTH_LONG;
 
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                } else {
+                    Intent intent = new Intent(SignupScreenActivity.this, MainScreenActivity.class);
+                    startActivity(intent);
+                }
             }
 
             @Override
-            public void onFailure(Call<Response<String>> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t) {
                 System.out.println(t);
             }
-        }
+        });
+
 
     }
 
