@@ -22,7 +22,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginScreenActivity extends AppCompatActivity {
-    MaterialEditText userName, password;
+    MaterialEditText email, password;
     Button back, login;
     JsonPlaceHolderApi jsonPlaceHolderApi;
 
@@ -31,7 +31,7 @@ public class LoginScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_screen);
 
-        userName = findViewById(R.id.signup_username);
+        email = findViewById(R.id.signup_email);
         password = findViewById(R.id.signup_password);
         back = findViewById(R.id.button_back);
         login = findViewById(R.id.button_login);
@@ -55,7 +55,7 @@ public class LoginScreenActivity extends AppCompatActivity {
         });
 
         login.setOnClickListener(v -> {
-            authenticateUser(userName.getText().toString(), password.getText().toString());
+            authenticateUser(email.getText().toString(), password.getText().toString());
 
         });
 

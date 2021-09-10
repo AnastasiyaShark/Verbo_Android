@@ -16,6 +16,7 @@ import com.google.gson.GsonBuilder;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,7 +39,7 @@ public class SignupScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_screen);
 
-        userName = findViewById(R.id.signup_username);
+        userName = findViewById(R.id.signup_email);
         password = findViewById(R.id.signup_password);
         email = findViewById(R.id.signup_email);
         materialBetterSpinnerNativeLanguage = findViewById(R.id.material_spinner_native_language);
@@ -95,33 +96,40 @@ public class SignupScreenActivity extends AppCompatActivity {
         } else {
             request.setLearningLanguage1Id(1);
         }
-        System.out.println(request);
-        Call<String> call = jsonPlaceHolderApi.createUser(request);
 
-        call.enqueue(new Callback<String>() {
+        Call<ResponseBody> call = jsonPlaceHolderApi.createUser(request);
+
+        call.enqueue(new Callback<ResponseBody>() {
+
+
             @Override
             public void onResponse
-                    (Call<String> call, Response<String> response) {
+                    (Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (!response.isSuccessful()) {
-                    Context context = getApplicationContext();
-                    CharSequence text = "Incorrect login or password!";
-                    int duration = Toast.LENGTH_LONG;
-
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                    makeAndShowToast("Incorrect login or password!");
                 } else {
-                    Intent intent = new Intent(SignupScreenActivity.this, MainScreenActivity.class);
+                    Intent intent = new Intent(SignupScreenActivity.this, LoginScreenActivity.class);
                     startActivity(intent);
+                    makeAndShowToast("User registered successfully!");
+
+
                 }
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
                 System.out.println(t);
             }
         });
 
 
+    }
+
+    public void makeAndShowToast(CharSequence text) {
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_LONG;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
 

@@ -9,11 +9,11 @@ import lombok.ToString;
 @Setter
 public class SigningRequest {
 
-    String login;
+    String email;
     String password;
 
-    public SigningRequest(String login, String password) {
-        this.login = login;
+    public SigningRequest(String email, String password) {
+        this.email = email;
         this.password = password;
     }
 }
