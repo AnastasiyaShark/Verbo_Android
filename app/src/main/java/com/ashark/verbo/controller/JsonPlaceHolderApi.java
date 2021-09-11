@@ -15,6 +15,6 @@ public interface JsonPlaceHolderApi {
     Call<String> authenticateUser (@Body SigningRequest request);
 
     @POST("/signup")
-    Call<ResponseBody> createUser(@Body SignupRequest signupRequest);
+    Call<SignupRequest> createUser(@Body SignupRequest signupRequest);
 
 }

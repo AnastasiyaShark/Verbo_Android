@@ -2,10 +2,15 @@ package com.ashark.verbo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -25,6 +30,8 @@ public class LoginScreenActivity extends AppCompatActivity {
     MaterialEditText email, password;
     Button back, login;
     JsonPlaceHolderApi jsonPlaceHolderApi;
+    Account[] list;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +43,28 @@ public class LoginScreenActivity extends AppCompatActivity {
         back = findViewById(R.id.button_back);
         login = findViewById(R.id.button_login);
 
+
+//проверка валидности логина
+        email.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!Patterns.EMAIL_ADDRESS.matcher(s).matches()) {
+//                    Toast.makeText(getApplicationContext(), "Invalid Email Address", Toast.LENGTH_LONG).show();
+                    email.setError("Invalid Email Address");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+//проверка валидности логина
 
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -77,7 +106,7 @@ public class LoginScreenActivity extends AppCompatActivity {
 
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                }else {
+                } else {
                     Intent intent = new Intent(LoginScreenActivity.this, MainScreenActivity.class);
                     startActivity(intent);
                 }

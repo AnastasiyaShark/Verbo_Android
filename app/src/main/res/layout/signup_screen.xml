@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/signup_email"
+            android:id="@+id/signup_username"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:hint="@string/text_hint_username"
@@ -58,7 +58,6 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:hint="@string/text_hint_password"
-
             android:inputType="text"
             android:textColor="@color/black"
             android:textSize="16sp"

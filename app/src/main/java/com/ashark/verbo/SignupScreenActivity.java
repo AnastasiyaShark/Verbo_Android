@@ -39,7 +39,7 @@ public class SignupScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_screen);
 
-        userName = findViewById(R.id.signup_email);
+        userName = findViewById(R.id.signup_username);
         password = findViewById(R.id.signup_password);
         email = findViewById(R.id.signup_email);
         materialBetterSpinnerNativeLanguage = findViewById(R.id.material_spinner_native_language);
@@ -83,7 +83,7 @@ public class SignupScreenActivity extends AppCompatActivity {
     private void createUser(String name, String password, String email,
                             String nativeLanguage, String learningLanguage1) {
 
-        SignupRequest request = new SignupRequest(name, password, email, null, null);
+        SignupRequest request = new SignupRequest(null, name, password, email, null, null);
         if (nativeLanguage.equals(nativeLanguages[1])) {
             request.setNativeLanguageId(2);
         } else if (nativeLanguage.equals(nativeLanguages[2])) {
@@ -97,15 +97,17 @@ public class SignupScreenActivity extends AppCompatActivity {
             request.setLearningLanguage1Id(1);
         }
 
-        Call<ResponseBody> call = jsonPlaceHolderApi.createUser(request);
+        Call<SignupRequest> call = jsonPlaceHolderApi.createUser(request);
 
-        call.enqueue(new Callback<ResponseBody>() {
+        call.enqueue(new Callback<SignupRequest>() {
 
 
             @Override
             public void onResponse
-                    (Call<ResponseBody> call, Response<ResponseBody> response) {
+                    (Call<SignupRequest> call, Response<SignupRequest> response) {
+
                 if (!response.isSuccessful()) {
+
                     makeAndShowToast("Incorrect login or password!");
                 } else {
                     Intent intent = new Intent(SignupScreenActivity.this, LoginScreenActivity.class);
@@ -117,7 +119,7 @@ public class SignupScreenActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(Call<SignupRequest> call, Throwable t) {
                 System.out.println(t);
             }
         });

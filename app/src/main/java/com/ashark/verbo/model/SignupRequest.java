@@ -2,13 +2,16 @@ package com.ashark.verbo.model;
 
 
 public class SignupRequest {
+    Integer id;
     String name;
     String password;
     String email;
     Integer nativeLanguageId;
     Integer learningLanguage1Id;
 
-    public SignupRequest(String name, String password, String email, Integer nativeLanguageId, Integer learningLanguage1Id) {
+
+    public SignupRequest(Integer id, String name, String password, String email, Integer nativeLanguageId, Integer learningLanguage1Id) {
+        this.id = id;
         this.name = name;
         this.password = password;
         this.email = email;
@@ -59,11 +62,12 @@ public class SignupRequest {
     @Override
     public String toString() {
         return "SignupRequest{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", nativeLanguage=" + nativeLanguageId +
-                ", learningLanguage1=" + learningLanguage1Id +
+                ", nativeLanguageId=" + nativeLanguageId +
+                ", learningLanguage1Id=" + learningLanguage1Id +
                 '}';
     }
 }
